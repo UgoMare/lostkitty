@@ -1,0 +1,19 @@
+<h2>Have  you seen a pet ?</h2>
+
+<ul>
+  <% @pets.each do |pet| %>
+  <li>
+    <%= link_to pet.name, pet_path(pet) %>
+    (<%= pet.category %>)
+
+    <% if pet.found_at.nil? %>
+    <%= link_to 'I FOUND IT', edit_pet_path(pet), class: 'btn btn-primary' %>
+    <% else %>
+      Found at: <%= pet.found_at %>
+    <% end %>
+    <%= link_to "I think he's dead :/", pet_path(pet), method: :delete, data: { confirm: 'Are you sure ?' }, class: 'btn btn-danger' %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to 'I lost my pet :(', new_pet_path %>

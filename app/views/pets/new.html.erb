@@ -1,0 +1,13 @@
+<h2>Add a new lost pet</h2>
+
+<%= form_for @pet do |f| %>
+  <div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: 'BuggsBunny', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= f.label :category %>
+  <%= f.select :category, Pet::CATEGORIES, placeholder: 'Choose one', class: 'form-control' %>
+  </div>
+  <%= f.submit 'Add a new pet', class: 'btn btn-primary'  %>
+<% end %>

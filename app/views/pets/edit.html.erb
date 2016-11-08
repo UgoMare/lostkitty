@@ -1,0 +1,9 @@
+<h2>I FOUND <%= @pet.name %> !!</h2>
+
+<%= form_for @pet do |f| %>
+<div class="form-group">
+  <%= f.label :found_at %>
+  <%= f.text_field :found_at, class: 'form-control datepicker' %>
+</div>
+<%= f.submit 'I found a pet', class: 'btn btn-primary' %>
+<% end %>
